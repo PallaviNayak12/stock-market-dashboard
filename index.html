@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Stock Market Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Extra highlight animation */
+    .highlight {
+      animation: flash 0.5s;
+    }
+    @keyframes flash {
+      from { background-color: yellow; }
+      to { background-color: transparent; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📈 Stock Market Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Markets</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">News</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="market-summary">
+    <h2>Market Summary</h2>
+    <div class="grid">
+      <div class="card" id="nifty">
+        <h3>NIFTY 50</h3>
+        <p>22,350.45 ▲ +0.85%</p>
+      </div>
+      <div class="card" id="sensex">
+        <h3>SENSEX</h3>
+        <p>73,280.10 ▼ -0.42%</p>
+      </div>
+      <div class="card" id="nasdaq">
+        <h3>NASDAQ</h3>
+        <p>16,200.00 ▲ +1.25%</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <h2>My Portfolio</h2>
+    <table id="portfolio">
+      <tr>
+        <th>Stock</th>
+        <th>Price</th>
+        <th>Change</th>
+      </tr>
+      <tr>
+        <td>TCS</td>
+        <td data-price="3250">₹3,250</td>
+        <td class="green">+1.2%</td>
+      </tr>
+      <tr>
+        <td>Infosys</td>
+        <td data-price="1450">₹1,450</td>
+        <td class="red">-0.8%</td>
+      </tr>
+      <tr>
+        <td>Reliance</td>
+        <td data-price="2750">₹2,750</td>
+        <td class="green">+2.5%</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    <p>© 2025 Stock Market Dashboard</p>
+  </footer>
+
+  <script>
+    // Function to simulate random price changes
+    function updateStocks() {
+      const rows = document.querySelectorAll("#portfolio tr");
+      rows.forEach((row, index) => {
+        if (index === 0) return; // skip header
+        const priceCell = row.cells[1];
+        const changeCell = row.cells[2];
+        let currentPrice = parseFloat(priceCell.getAttribute("data-price"));
+        
+        // Simulate random % change between -2% and +2%
+        const percentChange = (Math.random() * 4 - 2).toFixed(2);
+        const newPrice = currentPrice * (1 + percentChange / 100);
+
+        // Update data-price attribute
+        priceCell.setAttribute("data-price", newPrice.toFixed(2));
+        priceCell.textContent = "₹" + newPrice.toFixed(2);
+
+        // Update change cell
+        changeCell.textContent = (percentChange > 0 ? "+" : "") + percentChange + "%";
+        changeCell.className = percentChange >= 0 ? "green highlight" : "red highlight";
+
+        // Remove highlight after animation
+        setTimeout(() => changeCell.classList.remove("highlight"), 600);
+      });
+    }
+
+    // Update every 3 seconds
+    setInterval(updateStocks, 3000);
+  </script>
+</body>
+</html>
