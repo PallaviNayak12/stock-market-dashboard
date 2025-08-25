@@ -30,9 +30,4 @@ This project simulates live stock price updates and provides a clean, responsive
 
 
 
----
 
-## 📂 How to Use
-1. Clone this repository:  
-   ```bash
-   git clone https://github.com/your-username/stock-market-dashboard.git
