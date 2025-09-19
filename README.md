@@ -16,7 +16,7 @@ This project simulates live stock price updates and provides a clean, responsive
 
 ## 🛠️ Technologies Used
 - **HTML5** – structure  
-- **CSS3** – styling (grid, flexbox, responsive UI)  
+- **CSS3** – styling (grid, flexbox, responsive UI) 
 
 
 ---
