@@ -1,6 +1,6 @@
 # 📈 Interactive Stock Market Dashboard
 
-An interactive **Stock Market Dashboard** built with HTML, CSS. 
+An interactive **Stock Market Dashboard** built with HTML, CSS.
 This project simulates live stock price updates and provides a clean, responsive interface for tracking market indices and a personal portfolio.
 
 ---
