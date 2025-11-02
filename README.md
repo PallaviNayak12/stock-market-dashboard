@@ -9,7 +9,7 @@ This project simulates live stock price updates and provides a clean, responsive
 - 📊 Market summary cards for NIFTY 50, SENSEX, and NASDAQ
 - 💹 Simulated real-time stock price updates
 - 📑 Portfolio table with stock name, price, and % change
-- 🎨 Responsive and clean design using CSS Grid & Flexbox
+- 🎨 Responsive and clean design using CSS Grid & Flexbox                         
 - ⚡ Highlight animation when stock prices update
 
 ---
